@@ -809,6 +809,55 @@
     padding: 0.3rem 0.8rem;
     border-radius: 2rem;
   }
+  /* APPS I BUILT */
+  .apps-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 4rem;
+  }
+  @media (max-width: 768px) { .apps-grid { grid-template-columns: 1fr; } }
+
+  .app-card {
+    border: 1px solid var(--border);
+    background: var(--bg2);
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .app-card:hover { transform: translateY(-6px); border-color: rgba(212,168,83,0.5); }
+
+  .app-inner { padding: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .app-header { display: flex; align-items: center; justify-content: space-between; }
+  .app-emoji { font-size: 2rem; line-height: 1; }
+  .app-badge { font-family: 'Space Mono', monospace; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 2rem; background: rgba(74,222,128,0.12); color: #4ade80; border: 1px solid rgba(74,222,128,0.25); }
+  .app-title { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--cream); line-height: 1.1; margin: 0; }
+  .app-tagline { font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--gold); letter-spacing: 0.08em; margin: 0; }
+  .app-desc { font-size: 0.83rem; line-height: 1.75; color: var(--muted); margin: 0; }
+  .app-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.25rem; }
+  .app-pill { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.25rem 0.7rem; border: 1px solid var(--border); color: var(--muted); border-radius: 2rem; }
+  .app-cta { margin-top: 0.5rem; font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; transition: letter-spacing 0.3s; }
+  .app-card:hover .app-cta { letter-spacing: 0.25em; }
+  .app-preview { padding: 1.25rem 2rem; border-top: 1px solid var(--border); min-height: 110px; display: flex; flex-direction: column; justify-content: center; gap: 0.6rem; }
+  .tldr-preview { background: #0a0a0a; }
+  .preview-label { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 800; letter-spacing: -0.04em; color: #e8ff47; }
+  .preview-channels { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .preview-chip { font-size: 0.6rem; font-family: 'Space Mono', monospace; padding: 0.25rem 0.6rem; border-radius: 6px; }
+  .preview-chip.yellow { background: #e8ff4715; color: #e8ff47; border: 1px solid #e8ff4730; }
+  .preview-chip.purple { background: #a78bfa15; color: #a78bfa; border: 1px solid #a78bfa30; }
+  .preview-chip.teal   { background: #2dd4bf15; color: #2dd4bf; border: 1px solid #2dd4bf30; }
+  .preview-chip.pink   { background: #f472b615; color: #f472b6; border: 1px solid #f472b630; }
+  .preview-chip.green  { background: #34d39915; color: #34d399; border: 1px solid #34d39930; }
+  .rtr-preview { background: linear-gradient(135deg, rgba(155,143,196,0.06) 0%, rgba(74,127,165,0.06) 100%); align-items: center; gap: 1rem; }
+  .rtr-label { font-family: 'DM Serif Display', serif; font-size: 1rem; color: var(--cream); }
+  .preview-tiles { display: flex; gap: 0.4rem; }
+  .tile { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 6px; font-size: 1rem; border: 2px solid transparent; }
+  .tile-green  { background: rgba(74,222,128,0.2); border-color: rgba(74,222,128,0.4); color: #4ade80; }
+  .tile-yellow { background: rgba(250,204,21,0.2); border-color: rgba(250,204,21,0.4); color: #facc15; }
+  .tile-grey   { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--muted); }
+  .preview-hint { font-family: 'Space Mono', monospace; font-size: 0.62rem; color: var(--muted); letter-spacing: 0.08em; }
 
 </style>
 </head>
@@ -1086,6 +1135,76 @@
       </div>
       <a href="https://github.com/atreyidasgupta/Radio-Astronomy-Tutorials" target="_blank" class="project-link">View on GitHub ↗</a>
     </div>
+
+  </div>
+</section>
+
+<!-- APPS I BUILT -->
+<section id="apps">
+  <div class="reveal">
+    <div class="section-label">Live Projects</div>
+    <h2 class="section-title">Apps I <em>built</em></h2>
+  </div>
+  <div class="apps-grid">
+
+    <a href="https://tldr-app-news.vercel.app/" target="_blank" class="app-card reveal reveal-delay-1">
+      <div class="app-inner">
+        <div class="app-header">
+          <div class="app-emoji">📰</div>
+          <div class="app-badge">Live</div>
+        </div>
+        <h3 class="app-title">TLDR</h3>
+        <p class="app-tagline">news, but make it readable.</p>
+        <p class="app-desc">AI-powered news app with 9 personality-driven channels — from "Trump Did What Now" to "Big Bang Bulletin". Click a channel, Groq summarises the latest headlines in that channel's Gen Z voice. Built with React, Vite, GNews API and Groq.</p>
+        <div class="app-tech">
+          <span class="app-pill">React</span>
+          <span class="app-pill">Groq AI</span>
+          <span class="app-pill">GNews API</span>
+          <span class="app-pill">Vercel</span>
+        </div>
+        <div class="app-cta">Open App ↗</div>
+      </div>
+      <div class="app-preview tldr-preview">
+        <div class="preview-label">TLDR</div>
+        <div class="preview-channels">
+          <div class="preview-chip yellow">🤡 Trump Did What Now</div>
+          <div class="preview-chip purple">🚀 BuzzNews</div>
+          <div class="preview-chip teal">🏏 Thala For A Reason</div>
+          <div class="preview-chip pink">🎬 Bolly Gossip</div>
+          <div class="preview-chip green">🔭 Big Bang Bulletin</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://readtheroomgame.vercel.app/" target="_blank" class="app-card reveal reveal-delay-2">
+      <div class="app-inner">
+        <div class="app-header">
+          <div class="app-emoji">🎵</div>
+          <div class="app-badge">Live</div>
+        </div>
+        <h3 class="app-title">ReadTheRoom</h3>
+        <p class="app-tagline">Wordle, but make it music.</p>
+        <p class="app-desc">Daily song-guessing game where you identify a track from increasingly obvious clues. Built in ~3.5 hours as a portfolio project. Uses React, Vite, Tailwind, Vercel serverless functions and Upstash Redis for daily state.</p>
+        <div class="app-tech">
+          <span class="app-pill">React</span>
+          <span class="app-pill">Vite</span>
+          <span class="app-pill">Tailwind</span>
+          <span class="app-pill">Upstash Redis</span>
+        </div>
+        <div class="app-cta">Play Now ↗</div>
+      </div>
+      <div class="app-preview rtr-preview">
+        <div class="rtr-label">🎵 ReadTheRoom</div>
+        <div class="preview-tiles">
+          <div class="tile tile-green">♪</div>
+          <div class="tile tile-yellow">♫</div>
+          <div class="tile tile-grey">♩</div>
+          <div class="tile tile-grey">♬</div>
+          <div class="tile tile-grey">♭</div>
+        </div>
+        <div class="preview-hint">Clue 2 of 5 unlocked</div>
+      </div>
+    </a>
 
   </div>
 </section>
